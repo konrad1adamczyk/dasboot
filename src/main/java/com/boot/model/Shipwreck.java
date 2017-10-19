@@ -4,31 +4,42 @@ package com.boot.model;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 @Getter
 @Setter
+@Entity
 public class Shipwreck {
 
-	private Long id;
-	private String name;
-	private String description;
-	private String condition;
-	private Integer depth;
-	private Double latitude;
-	private Double longitude;
-	private Integer yearDiscovered;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-	public Shipwreck() { }
 
-	public Shipwreck(Long id, String name, String description, String condition, Integer depth, Double latitude, Double longitude, Integer yearDiscovered) {
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.condition = condition;
-		this.depth = depth;
-		this.latitude = latitude;
-		this.longitude = longitude;
-		this.yearDiscovered = yearDiscovered;
-	}
+    private String name;
+    private String description;
+    private String condition;
+    private Integer depth;
+    private Double latitude;
+    private Double longitude;
+    private Integer yearDiscovered;
+
+    public Shipwreck() {
+    }
+
+    public Shipwreck(Long id, String name, String description, String condition, Integer depth, Double latitude, Double longitude, Integer yearDiscovered) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.condition = condition;
+        this.depth = depth;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.yearDiscovered = yearDiscovered;
+    }
 
 //	public Long getId() {
 //		return id;
